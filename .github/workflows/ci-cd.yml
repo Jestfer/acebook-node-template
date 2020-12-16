@@ -103,5 +103,7 @@ jobs:
            --deployment-config-name CodeDeployDefault.OneAtATime \
            --deployment-group-name AcebookNodeGroup \
            --file-exists-behavior OVERWRITE \
-
+        #  TRY AND GET DYNAMICALLY
+           --gitHubLocation={repository=Jestfer/acebook-node-template,commitId=9d0970901fc864767b6b63650a199bac2a0bdfaa}
         #  --s3-location bucket=${{ matrix.s3-bucket }},key=${{ matrix.s3-filename }}.zip,bundleType=zip \
+        # https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html
