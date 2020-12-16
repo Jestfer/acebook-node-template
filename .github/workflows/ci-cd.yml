@@ -99,9 +99,9 @@ jobs:
       - name: AWS Create Deployment
         run: |
           aws deploy create-deployment \
-           --application-name ${{ matrix.acebook-node }} \
+           --application-name acebook-node \
            --deployment-config-name CodeDeployDefault.OneAtATime \
-           --deployment-group-name ${{ matrix.AcebookNodeGroup }} \
+           --deployment-group-name AcebookNodeGroup \
            --file-exists-behavior OVERWRITE \
 
         #  --s3-location bucket=${{ matrix.s3-bucket }},key=${{ matrix.s3-filename }}.zip,bundleType=zip \
