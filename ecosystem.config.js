@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: 'aws-codedeploy',
+        name: 'acebook-node',
         script: 'npm',
         args: 'start',
         // script: 'npx',
