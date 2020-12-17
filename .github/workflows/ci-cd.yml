@@ -21,7 +21,7 @@ jobs:
     name: CI Pipeline
     # runs-on: linux / ${{ matrix.os }}
     # runs-on: ubuntu-latest
-    runs-on: linux
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: ['12.x']
@@ -47,7 +47,7 @@ jobs:
   deploy:
     name: CD Pipeline
     # runs-on: ubuntu-latest
-    runs-on: linux
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         python-version: [3.8]
