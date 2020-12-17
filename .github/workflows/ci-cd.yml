@@ -100,7 +100,7 @@ jobs:
         run: |
           aws deploy create-deployment \
            --application-name acebook-node \
-           --deployment-config-name CodeDeployDefault.OneAtATime \
+           --deployment-config-name CodeDeployDefault.AllAtOnce \
            --deployment-group-name AcebookNodeGroup \
            --file-exists-behavior OVERWRITE \
            --github-location repository=Jestfer/acebook-node-template,commitId=9d0970901fc864767b6b63650a199bac2a0bdfaa
