@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "acebook-node",
+      "script": "node",
+      "args": "./bin/www"
+    }
+  ]
+}
