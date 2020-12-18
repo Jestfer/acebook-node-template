@@ -17,4 +17,4 @@ hooks:
     - location: scripts/reload-pm2.sh
       timeout: 300
       # runas: ubuntu
-      runas: root
+      runas: ec2-user
