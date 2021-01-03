@@ -37,11 +37,11 @@ jobs:
       # Install project dependencies, test and build
       - name: Install dependencies
         run: npm install
+      - name: Linting
+        run: npm run lint
       # REMOVING TESTS FOR NOW, NEED MONGODB
-      # - name: Run build
-      #   run: npm run build
-      # - name: Run Tests
-      #   run: npm run test:unit
+      - name: Run Unit Tests
+        run: npm run test:unit
 
   deploy:
     name: CD Pipeline
