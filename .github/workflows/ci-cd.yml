@@ -24,7 +24,7 @@ jobs:
     strategy:
       matrix:
         node-version: ['12.x']
-        mongodb-version: [4.0, 4.2, 4.4]
+        mongodb-version: [4.4]
 
     steps:
       - uses: actions/checkout@v2
@@ -43,12 +43,20 @@ jobs:
       # Install project dependencies, test and build
       - name: Install dependencies
         run: npm install
-      - name: Start test server
-        run: npm run start:test
-      - name: Run Linting and Tests
+      # - name: Start test server
+      #   run: pwd
+      #   run: ls
+      #   run: npm run start:test
+      - name: Run Linting and Unit Tests
         run: npm run test
         env:
           CI: true
+      - name: Run Integration Tests
+        uses: cypress-io/github-action@v1
+        with:
+          # build: npm run build
+          start: npm start
+          wait-on: http://localhost:3030
 
   deploy:
     name: CD Pipeline
