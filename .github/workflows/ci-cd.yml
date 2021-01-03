@@ -24,6 +24,7 @@ jobs:
     strategy:
       matrix:
         node-version: ['12.x']
+        mongodb-version: [4.0, 4.2, 4.4]
 
     steps:
       - uses: actions/checkout@v2
@@ -33,6 +34,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.3.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
 
       # Install project dependencies, test and build
       - name: Install dependencies
@@ -42,6 +48,8 @@ jobs:
       # REMOVING TESTS FOR NOW, NEED MONGODB
       - name: Run Unit Tests
         run: npm run test:unit
+        env:
+          CI: true
 
   deploy:
     name: CD Pipeline
