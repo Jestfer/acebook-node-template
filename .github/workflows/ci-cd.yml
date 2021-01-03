@@ -57,6 +57,8 @@ jobs:
           # build: npm run build
           start: npm run start:test
           wait-on: http://localhost:3030
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
   deploy:
     name: CD Pipeline
