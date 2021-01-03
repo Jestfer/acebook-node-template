@@ -43,11 +43,8 @@ jobs:
       # Install project dependencies, test and build
       - name: Install dependencies
         run: npm install
-      - name: Linting
-        run: npm run lint
-      # REMOVING TESTS FOR NOW, NEED MONGODB
-      - name: Run Unit Tests
-        run: npm run test:unit
+      - name: Run Linting and Tests
+        run: npm run test
         env:
           CI: true
 
