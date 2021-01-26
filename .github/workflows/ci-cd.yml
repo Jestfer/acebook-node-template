@@ -127,7 +127,7 @@ jobs:
       - name: Docker Image to .tar archive
         run: |
           docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node > acebook-node-docker.tar
-          
+          ls -sh acebook-node-docker.tar
 
       # Deploy push to AWS S3
       - name: AWS Deploy push
