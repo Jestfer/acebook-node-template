@@ -1,7 +1,7 @@
 cd ../../var/www/html/
 
-yum install -y docker
-systemctl start docker
+sudo yum install -y docker
+sudo systemctl start docker
 
 # https://github.com/moby/moby/issues/19566#issuecomment-307678645
 echo "There is a tmp folder inside /var/lib/docker/?"
@@ -20,4 +20,4 @@ ls
 # gunzip -c acebook-node-docker.tgz | docker load
 
 # https://gist.github.com/monkeym4ster/492af14ad078d005c8349bf1c97fdac5
-docker load -i acebook-node-docker.tgz
+sudo docker load -i acebook-node-docker.tgz
