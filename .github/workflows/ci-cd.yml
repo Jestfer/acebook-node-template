@@ -51,14 +51,14 @@ jobs:
         run: npm run test
         env:
           CI: true
-      - name: Run Integration Tests
-        uses: cypress-io/github-action@v1
-        with:
-          # build: npm run build
-          start: npm run start:test
-          wait-on: http://localhost:3030
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      # - name: Run Integration Tests
+      #   uses: cypress-io/github-action@v1
+      #   with:
+      #     # build: npm run build
+      #     start: npm run start:test
+      #     wait-on: http://localhost:3030
+      #   env:
+      #     ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
   deploy:
     name: CD Pipeline
