@@ -34,4 +34,4 @@ docker load -i acebook-node-docker.tgz
 echo "Any Docker images now?"
 docker images
 
-docker run -d josuemakers/acebook-node
+docker run -dp 80:3000 josuemakers/acebook-node
