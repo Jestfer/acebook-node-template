@@ -122,11 +122,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
-      # Old: docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tar.gz
+      # Old: docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node > acebook-node-docker.tar
       # Serialize Docker Image
       - name: Docker Image to .tar archive
         run: |
-          docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node > acebook-node-docker.tar
+          docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tar.gz
           ls -sh acebook-node-docker.tar
 
       # Deploy push to AWS S3
