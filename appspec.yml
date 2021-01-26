@@ -5,6 +5,7 @@ files:
     destination: /var/www/html/
 hooks:
   ApplicationStart:
-    - location: scripts/reload-pm2.sh
+    # - location: scripts/reload-pm2.sh
+    - location: scripts/load-docker-image.sh
       timeout: 300
       runas: root
