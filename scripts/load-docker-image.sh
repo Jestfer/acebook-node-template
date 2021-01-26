@@ -17,4 +17,7 @@ ls
 # docker load -i acebook-node-docker.tar.gz
 
 # https://codepad.co/snippet/docker-save-load-container-using-tgz-file-tar-gz
-gunzip -c acebook-node-docker.tgz | docker load
+# gunzip -c acebook-node-docker.tgz | docker load
+
+# https://gist.github.com/monkeym4ster/492af14ad078d005c8349bf1c97fdac5
+docker load -i acebook-node-docker.tgz
