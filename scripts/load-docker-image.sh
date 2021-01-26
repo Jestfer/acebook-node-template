@@ -14,4 +14,7 @@ echo "Let's check what's in here"
 ls
 
 # docker load -i /path/to/package/acebook-node-docker.tar.gz
-docker load -i acebook-node-docker.tar.gz
+# docker load -i acebook-node-docker.tar.gz
+
+# https://codepad.co/snippet/docker-save-load-container-using-tgz-file-tar-gz
+gunzip -c acebook-node-docker.tgz | docker load
