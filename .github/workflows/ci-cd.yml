@@ -128,6 +128,7 @@ jobs:
         run: |
           docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tgz
           ls -sh acebook-node-docker.tgz
+          du -sh acebook-node-docker.tgz
 
       # Deploy push to AWS S3
       - name: AWS Deploy push
