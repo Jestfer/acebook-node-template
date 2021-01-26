@@ -126,6 +126,7 @@ jobs:
       # Serialize Docker Image
       - name: Docker Image to .tar archive
         run: |
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node
           docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tgz
           ls -sh acebook-node-docker.tgz
           du -sh acebook-node-docker.tgz
