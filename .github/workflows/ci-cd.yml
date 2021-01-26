@@ -124,8 +124,8 @@ jobs:
 
       # Serialize Docker Image
       - name: Docker Image to .tar archive
-          run: |
-            docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tar.gz
+        run: |
+          docker save ${{ secrets.DOCKERHUB_USERNAME }}/acebook-node | gzip -c > acebook-node-docker.tar.gz
 
       # Deploy push to AWS S3
       - name: AWS Deploy push
