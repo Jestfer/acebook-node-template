@@ -1,6 +1,6 @@
 cd ../../var/www/html/
 
-yum install -y docker
+# yum install -y docker
 
 systemctl start docker
 
