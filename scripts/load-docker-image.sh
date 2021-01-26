@@ -3,10 +3,11 @@ cd ../../var/www/html/
 yum install -y docker
 systemctl start docker
 
-echo "Is there a tmp folder inside /var/lib/docker/?"
-ls /var/lib/docker/tmp/
-# Creating dir as specified in https://github.com/moby/moby/issues/19566#issuecomment-307678645
-mkdir /var/lib/docker/tmp/
+# https://github.com/moby/moby/issues/19566#issuecomment-307678645
+echo "There is a tmp folder inside /var/lib/docker/?"
+
+# https://stackoverflow.com/a/63378252/8243590
+echo "Could the issue be the file format? Trying with .tar now"
 
 echo "I get to Docker Load"
 echo "Let's check what's in here"
