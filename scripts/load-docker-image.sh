@@ -19,9 +19,6 @@ systemctl start docker
 # echo "And let's check what's in tmp folder"
 # ls -la /var/lib/docker/tmp/
 
-echo "Any Docker images?"
-docker images
-
 # docker load -i /path/to/package/acebook-node-docker.tar.gz
 # docker load -i acebook-node-docker.tar.gz
 
