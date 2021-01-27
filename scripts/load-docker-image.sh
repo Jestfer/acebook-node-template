@@ -34,7 +34,7 @@ docker load -i acebook-node-docker.tgz
 echo "Any Docker images now?"
 docker images
 
-sudo docker run -dp 80:3000 josuemakers/acebook-node
+sudo docker run -dp 3000:3000 josuemakers/acebook-node
 
 echo "Deleting old, unused images"
-docker image prune
+docker image prune -y
