@@ -17,48 +17,48 @@ on:
       - master
 
 jobs:
-  buildAndTest:
-    name: CI Pipeline
-    # runs-on: linux / ${{ matrix.os }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['12.x']
-        mongodb-version: [4.4]
+  # buildAndTest:
+  #   name: CI Pipeline
+  #   # runs-on: linux / ${{ matrix.os }}
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: ['12.x']
+  #       mongodb-version: [4.4]
 
-    steps:
-      - uses: actions/checkout@v2
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+  #     # Initialize Node.js
+  #     - name: Install Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
       
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.3.0
-        with:
-          mongodb-version: ${{ matrix.mongodb-version }}
+  #     - name: Start MongoDB
+  #       uses: supercharge/mongodb-github-action@1.3.0
+  #       with:
+  #         mongodb-version: ${{ matrix.mongodb-version }}
 
-      # Install project dependencies, test and build
-      - name: Install dependencies
-        run: npm install
-      # - name: Start test server
-      #   run: pwd
-      #   run: ls
-      #   run: npm run start:test
-      - name: Run Linting and Unit Tests
-        run: npm run test
-        env:
-          CI: true
-      # - name: Run Integration Tests
-      #   uses: cypress-io/github-action@v1
-      #   with:
-      #     # build: npm run build
-      #     start: npm run start:test
-      #     wait-on: http://localhost:3030
-      #   env:
-      #     ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+  #     # Install project dependencies, test and build
+  #     - name: Install dependencies
+  #       run: npm install
+  #     # - name: Start test server
+  #     #   run: pwd
+  #     #   run: ls
+  #     #   run: npm run start:test
+  #     - name: Run Linting and Unit Tests
+  #       run: npm run test
+  #       env:
+  #         CI: true
+  #     - name: Run Integration Tests
+  #       uses: cypress-io/github-action@v1
+  #       with:
+  #         # build: npm run build
+  #         start: npm run start:test
+  #         wait-on: http://localhost:3030
+  #       env:
+  #         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
   deploy:
     name: CD Pipeline
@@ -72,7 +72,7 @@ jobs:
         s3-bucket: ['acebook-node-deployments']
         s3-filename: ['master-acebook-node-${{ github.sha }}']
 
-    needs: buildAndTest
+    # needs: buildAndTest
     steps:
       - uses: actions/checkout@v2
 
