@@ -31,4 +31,7 @@ docker load -i acebook-node-docker.tgz
 echo "Any Docker images now?"
 docker images
 
-sudo docker run -dp 80:3000 josuemakers/acebook-node
+sudo docker run -d -p 3000:3000 josuemakers/acebook-node
+
+echo "Running Docker containers"
+sudo docker ps
