@@ -32,7 +32,7 @@ echo "Any Docker images now?"
 docker images
 
 # sudo docker run -d -p 3000:3000 josuemakers/acebook-node
-sudo docker run -p 80:3000 josuemakers/acebook-node
+sudo docker run -dp 80:3000 josuemakers/acebook-node
 
 echo "Running Docker containers"
 sudo docker ps
