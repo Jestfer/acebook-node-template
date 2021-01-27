@@ -20,7 +20,8 @@ app.set('port', port);
  * Connect to MongoDB
  **/
 
- var mongoDbUrl = process.env.MONGODB_URL || 'mongodb://localhost/acebook';
+//  var mongoDbUrl = process.env.MONGODB_URL || 'mongodb://localhost/acebook';
+ var mongoDbUrl = process.env.MONGODB_URL || 'mongodb://172.17.0.1:27017/acebook';
  console.log(mongoDbUrl, 'MONGODB URL');
  mongoose.connect(mongoDbUrl, {
    useNewUrlParser: true,
